@@ -1,4 +1,12 @@
 App::Application.routes.draw do
+
+  resources :books do
+    collection do
+      get :cached_index
+    end
+  end
+
+  root :to => 'homes#index'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
